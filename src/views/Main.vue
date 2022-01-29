@@ -71,7 +71,12 @@ export default {
       justify-content: center;
       align-items: center;
 
-      background: #6BAEA2;
+      background-color: #05e8ba;
+      background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+      background-size: 200% 100%;
+      background-position: 40% 0;
+      transition: background-position 0.5s ease;
+
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
 
@@ -79,6 +84,10 @@ export default {
       font-weight: 500;
       font-size: 20px;
       text-decoration: none;
+
+      &:hover {
+        background-position: 80% 0;
+      }
     }
   }
 
