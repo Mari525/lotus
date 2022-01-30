@@ -2,10 +2,10 @@
 	<div class="footer">
 		<div class="footer__wrapper">
 			<div class="footer__nav">
-					<router-link class="nav__link" :class="{active: $route.name === 'Main'}" to="/">Главная</router-link>
-					<router-link class="nav__link" :class="{active: $route.name === 'Services'}" to="/services">Услуги</router-link>
-					<router-link class="nav__link" :class="{active: $route.name === 'About'}" to="/about">О нас</router-link>
-					<router-link class="nav__link" :class="{active: $route.name === 'Contacts'}" to="/contacts">Контакты</router-link>
+					<router-link class="footer__link" :class="{active: $route.name === 'Main'}" to="/">Главная</router-link>
+					<router-link class="footer__link" :class="{active: $route.name === 'Services'}" to="/services">Услуги</router-link>
+					<router-link class="footer__link" :class="{active: $route.name === 'About'}" to="/about">О нас</router-link>
+					<router-link class="footer__link" :class="{active: $route.name === 'Contacts'}" to="/contacts">Контакты</router-link>
 			</div>
 			<div class="footer__contacts">
 				<a class="footer__phone" href="#">
@@ -35,16 +35,20 @@ export default {
 <style lang="scss">
 
 .footer {
-  padding: 50px 0 15px;
+  padding: 60px 0 20px;
   background-color: #214261;
   color: #ffffff;
 
   &__wrapper {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto; 
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+
+  &__link {
+    margin-right: 50px;
   }
 
   a {
@@ -73,7 +77,7 @@ export default {
   }
 
   &__copyright {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
   }
 }

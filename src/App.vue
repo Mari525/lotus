@@ -28,11 +28,14 @@ import Footer from './components/Footer.vue'
 
 <style lang="scss">
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 body {

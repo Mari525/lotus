@@ -1,57 +1,76 @@
 <template>
-  <div class="wrapper">
-    <div class="book-home" :class="block_book">
-      <button @click="status2 = !status2">{{ btnBook }}</button>
-      <div :class="book_home">
-        <nav>
-          <strong>Категории:</strong>
-          <div v-for="(size, index) in shirtSizes" :key="index">
-            <input type="checkbox" :id="size" :value="size" v-model="selectedSizes">
-            <label :for="size">{{ size }}</label>
+  <div class="main services">
+    <h1 class="heading">Забронировать услуги</h1>
+    <div class="page-wrapper services__wrapper">
+      <div class="book-home" :class="block_book">
+        <div class="photo-dots">
+          <div class="photo-dots__bottom">
+            <img src="@/assets/dots.png" alt="">
           </div>
-        </nav>
-        <ProductDescriptionDrawer2
-            :product="product"
-            :active="active.product_drawer"
-            v-on:close-product-drawer="closeProductDrawer"
-        />
-        <div class="product-cards-container">
-          <div class="card" v-for="(product, index) in filteredPlayers" :key="index">
-            <h3>{{ product.name }}</h3>
-
-            <h5 class="price">Цена: ${{ product.price.toFixed(2) }}</h5>
-            <p class="description">Описание: {{ product.short_description }}</p>
-            <p class="text-muted">{{ product.category }}</p>
-            <button class="view-product-btn" @click="viewProduct2(product)">Подробнее</button>
+          <div class="photo-dots__top">
+            <img src="@/assets/services1.jpg" alt="">
+          </div>
+        </div>
+        <button class="services__button" @click="status2 = !status2">{{ btnBook }}</button>
+        <div :class="book_home">
+          <nav>
+            <strong>Категории:</strong>
+            <div v-for="(size, index) in shirtSizes" :key="index">
+              <input type="checkbox" :id="size" :value="size" v-model="selectedSizes">
+              <label :for="size">{{ size }}</label>
+            </div>
+          </nav>
+          <ProductDescriptionDrawer2
+              :product="product"
+              :active="active.product_drawer"
+              v-on:close-product-drawer="closeProductDrawer"
+          />
+          <div class="product-cards-container">
+            <div class="card" v-for="(product, index) in filteredPlayers" :key="index">
+              <h3>{{ product.name }}</h3>
+  
+              <h5 class="price">Цена: ${{ product.price.toFixed(2) }}</h5>
+              <p class="description">Описание: {{ product.short_description }}</p>
+              <p class="text-muted">{{ product.category }}</p>
+              <button class="view-product-btn" @click="viewProduct2(product)">Подробнее</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-
-    <div class="book-services" :class="block_services">
-      <button class="btn-services" @click="status = !status">{{ btnServices }}</button>
-      <div :class="home">
-        <nav>
-          <strong>Категории:</strong>
-          <div v-for="(size, index) in shirtSizes2" :key="index">
-            <input type="checkbox" :id="size" :value="size" v-model="selectedSizes2">
-            <label :for="size">{{ size }}</label>
+  
+  
+      <div class="book-services" :class="block_services">
+        <div class="photo-dots">
+          <div class="photo-dots__bottom">
+            <img src="@/assets/dots.png" alt="">
           </div>
-        </nav>
-        <ProductDescriptionDrawer
-            :product2="product2"
-            :active="active.product_drawer"
-            v-on:close-product-drawer="closeProductDrawer"
-        />
-        <div class="product-cards-container">
-          <div class="card" v-for="(product2, index) in filteredPlayers2" :key="index">
-            <h3>{{ product2.name }}</h3>
-
-            <h5 class="price">Цена: ${{ product2.price.toFixed(2) }}</h5>
-            <p class="description">Описание: {{ product2.short_description }}</p>
-            <p class="text-muted">{{ product2.category }}</p>
-            <button class="view-product-btn" @click="viewProduct(product2)">Подробнее</button>
+          <div class="photo-dots__top">
+            <img src="@/assets/services2.jpg" alt="">
+          </div>
+        </div>
+        <button class="services__button" @click="status = !status">{{ btnServices }}</button>
+        <div :class="home">
+          <nav>
+            <strong>Категории:</strong>
+            <div v-for="(size, index) in shirtSizes2" :key="index">
+              <input type="checkbox" :id="size" :value="size" v-model="selectedSizes2">
+              <label :for="size">{{ size }}</label>
+            </div>
+          </nav>
+          <ProductDescriptionDrawer
+              :product2="product2"
+              :active="active.product_drawer"
+              v-on:close-product-drawer="closeProductDrawer"
+          />
+          <div class="product-cards-container">
+            <div class="card" v-for="(product2, index) in filteredPlayers2" :key="index">
+              <h3>{{ product2.name }}</h3>
+  
+              <h5 class="price">Цена: ${{ product2.price.toFixed(2) }}</h5>
+              <p class="description">Описание: {{ product2.short_description }}</p>
+              <p class="text-muted">{{ product2.category }}</p>
+              <button class="view-product-btn" @click="viewProduct(product2)">Подробнее</button>
+            </div>
           </div>
         </div>
       </div>
@@ -132,7 +151,7 @@ export default {
     },
     btnServices: function () {
       if (this.status === false) {
-        return 'Доп Услуги'
+        return 'Другие услуги'
       }
       return 'Назад'
     },
@@ -170,6 +189,41 @@ export default {
 </script>
 
 <style lang="scss">
+
+.services {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .photo-dots {
+    img {
+      max-width: 400px;
+    }
+  }
+
+  &__button {
+    width: 300px;
+    height: 70px;
+    margin-top: 50px;
+    margin-right: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #6BAEA2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+
+    font-weight: 500;
+    font-size: 22px;
+    color: #ffffff;
+  }
+}
+
 .product-cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -184,28 +238,17 @@ export default {
   display: none;
 }
 
-.btn-services {
-  background-color: red;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.book-home {
-  width: 100%;
-  background-color: #42b983;
-  margin: 10px;
-}
-
+.book-home,
 .book-services {
-  width: 100%;
-  background-color: #41b0b0;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    max-width: 450px;
+  }
 }
+
 .card {
   width: 80%;
   margin: 10%;

@@ -12,9 +12,14 @@
           </div>
         </div>
         <div class="promo__wrapper">
-          <p class="promo__text">
-            Проведите незабываемый отдых в живописном месте! Рекламный текст рекламный текст рекламный текст
-          </p>
+          <div>
+            <p class="promo__text">
+              Проведите незабываемый отдых в живописном месте!
+            </p>
+            <p class="promo__text">
+              Рекламный текст рекламный текст рекламный текст
+            </p>
+          </div>
           <router-link class="promo__link" to="/services">Забронировать домик</router-link>
         </div>
       </div>
@@ -52,12 +57,7 @@ export default {
     justify-content: center;
     align-items: center;
 
-    background-color: #05e8ba;
-    background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
-    background-size: 200% 100%;
-    background-position: 40% 0;
-    transition: background-position 0.5s ease;
-
+    background-color: #6BAEA2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
@@ -67,7 +67,7 @@ export default {
     text-decoration: none;
 
     &:hover {
-      background-position: 80% 0;
+      
     }
   }
 }
@@ -87,11 +87,11 @@ export default {
   &__bottom {
     grid-column: 1 / span 9;
     grid-row: 1;
-    padding-top: 20%;
+    padding-top: 10%;
   }
 
   img {
-    width: 100%;
+    max-width: 500px;
     display: block;
   }
 }
