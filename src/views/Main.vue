@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <div class="main__wrapper">
-      <h1 class="main__heading">База отыха “Каспийский лотос”</h1>
+    <div class="page-wrapper">
+      <h1 class="heading">База отыха “Каспийский лотос”</h1>
       <div class="promo">
         <div class="photo-dots">
           <div class="photo-dots__bottom">
@@ -29,90 +29,71 @@ export default {
 </script>
 
 <style lang="scss">
-  .main {
-    padding: 50px 0;
-    background: linear-gradient(360deg, rgba(220, 234, 255, 0.2) -15.92%, rgba(187, 243, 255, 0.138) 83.67%), #F5FCFD;
+.promo {
+  display: flex;
+  justify-content: space-between;
 
-    &__wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    &__heading {
-      margin-bottom: 100px;
-
-      color: #214261;
-      font-size: 36px;
-      font-weight: 600;
-      text-align: center;
-    }
-  }
-
-  .promo {
+  &__wrapper {
+    max-width: 420px;
     display: flex;
-    justify-content: space-between;
-
-    &__wrapper {
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-
-    &__text {
-      color: #000000;
-    }
-
-    &__link {
-      display: block;
-      width: 300px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      background-color: #05e8ba;
-      background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
-      background-size: 200% 100%;
-      background-position: 40% 0;
-      transition: background-position 0.5s ease;
-
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
-
-      color: #ffffff;
-      font-weight: 500;
-      font-size: 20px;
-      text-decoration: none;
-
-      &:hover {
-        background-position: 80% 0;
-      }
-    }
+    flex-direction: column;
+    justify-content: space-around;
   }
 
-  .photo-dots {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position: relative;
+  &__text {
+    color: #000000;
+  }
 
-    &__top {
-      grid-row: 1;
-      grid-column: 2 / span 9;
-      
-      z-index: 1;
-    }
+  &__link {
+    display: block;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &__bottom {
-      grid-column: 1 / span 8;
-      grid-row: 1;
-      padding-top: 20%;
-    }
+    background-color: #05e8ba;
+    background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+    background-size: 200% 100%;
+    background-position: 40% 0;
+    transition: background-position 0.5s ease;
 
-    img {
-      width: 100%;
-      display: block;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+
+    &:hover {
+      background-position: 80% 0;
     }
   }
+}
+
+.photo-dots {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+
+  &__top {
+    grid-row: 1;
+    grid-column: 2 / span 10;
+    
+    z-index: 1;
+  }
+
+  &__bottom {
+    grid-column: 1 / span 9;
+    grid-row: 1;
+    padding-top: 20%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
 
 </style>
