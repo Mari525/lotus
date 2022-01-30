@@ -72,28 +72,4 @@ export default {
   }
 }
 
-.photo-dots {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  position: relative;
-
-  &__top {
-    grid-row: 1;
-    grid-column: 2 / span 10;
-    
-    z-index: 1;
-  }
-
-  &__bottom {
-    grid-column: 1 / span 9;
-    grid-row: 1;
-    padding-top: 10%;
-  }
-
-  img {
-    max-width: 500px;
-    display: block;
-  }
-}
-
 </style>

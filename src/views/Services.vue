@@ -1,9 +1,9 @@
 <template>
   <div class="main services">
-    <h1 class="heading">Забронировать услуги</h1>
+    <h1 class="heading"> {{ head }} </h1>
     <div class="page-wrapper services__wrapper">
-      <div class="book-home" :class="block_book">
-        <div class="photo-dots">
+      <div class="book-home">
+        <div :class="nope">
           <div class="photo-dots__bottom">
             <img src="@/assets/dots.png" alt="">
           </div>
@@ -11,7 +11,7 @@
             <img src="@/assets/services1.jpg" alt="">
           </div>
         </div>
-        <button class="services__button" @click="status2 = !status2">{{ btnBook }}</button>
+        <button class="services__button" @click="status2 = !status2" :class="block_book">{{ btnBook }}</button>
         <div :class="book_home">
           <nav>
             <strong>Категории:</strong>
@@ -40,7 +40,7 @@
   
   
       <div class="book-services" :class="block_services">
-        <div class="photo-dots">
+        <div :class="nope">
           <div class="photo-dots__bottom">
             <img src="@/assets/dots.png" alt="">
           </div>
@@ -48,7 +48,7 @@
             <img src="@/assets/services2.jpg" alt="">
           </div>
         </div>
-        <button class="services__button" @click="status = !status">{{ btnServices }}</button>
+        <button class="services__button" @click="status = !status" :class="block_services">{{ btnServices }}</button>
         <div :class="home">
           <nav>
             <strong>Категории:</strong>
@@ -142,6 +142,21 @@ export default {
         return this.selectedSizes2.includes(product2.category)
       })
     },
+    head: function() {
+      if (this.status2 === true) {
+        return 'Забронировать домик'
+      }
+      else if (this.status){
+        return 'Дополнительные услуги'
+      }
+      return 'Забронировать услуги'
+    },
+    nope: function () {
+      if (this.status2 === true || this.status === true) {
+        return 'non_show'
+      }
+      return 'photo-dots'
+    },
     home: function () {
       if (this.status === true) {
         return 'show'
@@ -162,8 +177,6 @@ export default {
         return 'show'
       }
     },
-
-
     book_home: function () {
       if (this.status2 === true) {
         return 'show'
@@ -184,6 +197,7 @@ export default {
         return 'show'
       }
     },
+
   }
 }
 </script>
@@ -198,6 +212,7 @@ export default {
   }
 
   .photo-dots {
+    margin-bottom: 50px;
     img {
       max-width: 400px;
     }
@@ -206,7 +221,6 @@ export default {
   &__button {
     width: 300px;
     height: 70px;
-    margin-top: 50px;
     margin-right: 20px;
     
     display: flex;
