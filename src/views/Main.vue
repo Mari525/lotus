@@ -58,7 +58,7 @@ export default {
     align-items: center;
 
     // background-color: #6BAEA2;
-    background-image: linear-gradient(to right, #6BAEA2 0%, #97f1de 50%, #6BAEA2 100%);
+    background-image: linear-gradient(to right, #6BAEA2 0%, #8addcb 50%, #6BAEA2 100%);
     background-size: 200% auto;
     transition: 0.8s;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
