@@ -35,16 +35,22 @@ export default {
 <style lang="scss">
 
 .footer {
-  padding: 60px 0 20px;
+  padding: 80px 0 20px;
   background-color: #214261;
   color: #ffffff;
 
   &__wrapper {
-    max-width: 1000px;
-    margin: 0 auto; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+  }
+
+  &__nav {
+    grid-column: 5 / 10;
   }
 
   &__link {
@@ -57,6 +63,8 @@ export default {
   }
 
   &__contacts {
+    grid-column: 10 / 13;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
