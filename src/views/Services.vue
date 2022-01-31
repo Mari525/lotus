@@ -228,6 +228,7 @@ export default {
     width: 300px;
     height: 70px;
     margin-right: 20px;
+    margin-bottom: 20px;
     
     display: flex;
     justify-content: center;

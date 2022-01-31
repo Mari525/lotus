@@ -39,6 +39,7 @@ export default {
   &__text-pic {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 70px;
 
     img {
@@ -54,6 +55,7 @@ export default {
   &__gallery {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     img {
       max-width: 500px;

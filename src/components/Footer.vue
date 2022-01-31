@@ -43,11 +43,11 @@ export default {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(auto-fit, min-max(100px, 1fr));
   }
 
   &__nav {
-    grid-column: 5 / 10;
+    grid-column: 10 / 12;
   }
 
   &__link {
@@ -60,7 +60,7 @@ export default {
   }
 
   &__contacts {
-    grid-column: 10 / 13;
+    grid-column: 13 / 15;
 
     display: flex;
     flex-direction: column;

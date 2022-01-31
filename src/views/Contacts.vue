@@ -34,6 +34,7 @@ export default {
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__text {

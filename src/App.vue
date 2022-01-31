@@ -44,7 +44,7 @@ body {
 }
 
 .main {
-  padding: 50px 0 100px;
+  padding: 50px 10px 100px;
   background: linear-gradient(360deg, rgba(220, 234, 255, 0.2) -15.92%, rgba(187, 243, 255, 0.138) 83.67%), #F5FCFD;
 }
 
