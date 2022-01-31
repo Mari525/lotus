@@ -31,7 +31,7 @@
               <h3 class="card__heading">{{ product.name }}</h3>
               <img class="card__img" src="@/assets/services-house.jpg" alt="">
               <b class="card__price">Цена: ${{ product.price.toFixed(2) }}</b>
-              <p class="card__descr">Описание: {{ product.short_description }}</p>
+              <p class="card__descr">{{ product.short_description }}</p>
               <button class="card__button" @click="viewProduct2(product)">Подробнее</button>
             </div>
           </div>
@@ -68,7 +68,7 @@
               <h3 class="card__heading">{{ product2.name }}</h3>
               <img class="card__img" src="@/assets/services2.jpg" alt="">
               <b class="card__price">Цена: ${{ product2.price.toFixed(2) }}</b>
-              <p class="card__descr">Описание: {{ product2.short_description }}</p>
+              <p class="card__descr">{{ product2.short_description }}</p>
               <button class="card__button" @click="viewProduct(product2)">Подробнее</button>
             </div>
           </div>
