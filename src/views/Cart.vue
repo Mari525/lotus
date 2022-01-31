@@ -1,6 +1,6 @@
 <template>
-  <div class="cart">
-    <h1>Your Cart</h1>
+  <div class="main">
+    <h1 class="cart__heading">Корзина</h1>
 
     <CartItemCard
         v-for="product in products"
@@ -26,3 +26,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.cart {
+  &__heading {
+    text-align: center;
+  }
+}
+</style>

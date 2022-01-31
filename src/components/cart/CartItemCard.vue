@@ -1,13 +1,11 @@
 <template>
-<div class="cart-item-card">
-  <div class="header">
+<div class="cart__table">
+  <div class="cart__item">
     <h3>{{ product.name }}</h3>
 
-    <h4>In Cart: {{ product.quantity }}</h4>
-    <h4>Total Cost: {{ item_cost.toFixed(2) }} </h4>
+    <b>Количество: {{ product.quantity }}</b>
+    <b>Сумма: {{ item_cost.toFixed(2) }} </b>
   </div>
-
-<!--  <p>{{ description }}</p>-->
 </div>
 </template>
 
@@ -27,18 +25,20 @@ export default {
 </script>
 
 <style lang="scss">
-.cart-item-card {
-  width: 90%;
-  margin: 5%;
-  background-color: white;
-  box-shadow: 0 0 5px gray;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: left;
+.cart {
+  &__table {
+    width: 90%;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 0 5px gray;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
 
-  .header {
+  &__item {
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 }
 </style>
