@@ -44,9 +44,6 @@ export default {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    // display: flex;
-    // justify-content: space-around;
-    // align-items: center;
   }
 
   &__nav {
