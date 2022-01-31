@@ -57,7 +57,6 @@ export default {
     justify-content: center;
     align-items: center;
 
-    // background-color: #6BAEA2;
     background-image: linear-gradient(to right, #6BAEA2 0%, #8addcb 50%, #6BAEA2 100%);
     background-size: 200% auto;
     transition: 0.8s;

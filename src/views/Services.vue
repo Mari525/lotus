@@ -232,14 +232,21 @@ export default {
     justify-content: center;
     align-items: center;
 
-    background: #6BAEA2;
+    background-image: linear-gradient(to right, #6BAEA2 0%, #8addcb 50%, #6BAEA2 100%);
+    background-size: 200% auto;
+    transition: 0.8s;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     border: none;
 
+    font-family: "Fira Sans", Arial, Helvetica, sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
     color: #ffffff;
+
+    &:hover {
+      background-position: right center;
+    }
   }
 
   &__flex-wrapper {
@@ -359,6 +366,7 @@ export default {
     border-radius: 10px;
     border: none;
 
+    font-family: "Fira Sans", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 20px;
     color: #ffffff;
