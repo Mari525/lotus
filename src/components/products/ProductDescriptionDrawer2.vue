@@ -8,16 +8,15 @@
     <div v-if="product" class="product-details">
       <h3 class="text-center">{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
-      <h3 class="text-center">${{ product.price.toFixed(2) }}</h3>
+      <b class="text-center">${{ product.price.toFixed(2) }}</b>
 
       <div class="cart-total" v-if="product_total">
-        <h3>In cart</h3>
-        <h4>{{ product_total }}</h4>
+        <p class="drawer__cart">В корзине: <b>{{ product_total }}</b></p>
       </div>
 
-      <div class="btn-container">
-        <button class="remove" @click="removeFromCart">Remove</button>
-        <button class="add" @click="addToCart()">Add</button>
+      <div class="drawer__buttons">
+        <button class="drawer__button" @click="addToCart()">Добавить</button>
+        <button class="drawer__button" @click="removeFromCart">Удалить</button>
       </div>
     </div>
   </div>
@@ -75,18 +74,46 @@ export default {
   &.show {
     left: 34%;
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__button {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #6BAEA2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+
+    font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__cart {
+    color: #0B8C56;
+  }
 }
 
 .drawer-close {
-  font-size: 1.5rem;
-  padding: 5px;
   border-radius: 5px;
-  right: 10px;
   border: 2px solid gray;
   color: gray;
-  width: 15px;
-  float: right;
-  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 
   &:hover {
     background-color: lightgray;
@@ -97,22 +124,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  p.description {
-    padding: 20px;
-    line-height: 1.5rem;
-  }
-
-  .btn-container {
-    button {
-      width: 150px;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 0 5px 50px;
-      cursor: pointer;
-    }
-  }
 }
 
 @media (min-width: 500px) {

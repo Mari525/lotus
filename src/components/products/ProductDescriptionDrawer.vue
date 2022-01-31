@@ -8,16 +8,15 @@
     <div v-if="product2" class="product-details">
       <h3 class="text-center">{{ product2.name }}</h3>
       <p class="description">{{ product2.description }}</p>
-      <h3 class="text-center">${{ product2.price.toFixed(2) }}</h3>
+      <b class="text-center">${{ product2.price.toFixed(2) }}</b>
 
       <div class="cart-total" v-if="product_total">
-        <h3>In cart</h3>
-        <h4>{{ product_total }}</h4>
+        <p class="drawer__cart" >В корзине: <b>{{ product_total }}</b></p>
       </div>
 
-      <div class="btn-container">
-        <button class="remove" @click="removeFromCart">Remove</button>
-        <button class="add" @click="addToCart()">Add</button>
+      <div class="drawer__buttons">
+        <button class="drawer__button" @click="addToCart()">Добавить</button>
+        <button class="drawer__button" @click="removeFromCart">Удалить</button>
       </div>
     </div>
   </div>

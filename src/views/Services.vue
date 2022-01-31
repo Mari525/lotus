@@ -66,6 +66,7 @@
             <div class="card" v-for="(product2, index) in filteredPlayers2" :key="index">
               <span class="card__category">{{ product2.category }}</span>
               <h3 class="card__heading">{{ product2.name }}</h3>
+              <img class="card__img" src="@/assets/services2.jpg" alt="">
               <b class="card__price">Цена: ${{ product2.price.toFixed(2) }}</b>
               <p class="card__descr">Описание: {{ product2.short_description }}</p>
               <button class="card__button" @click="viewProduct(product2)">Подробнее</button>
@@ -313,7 +314,7 @@ export default {
   width: 340px;
   height: 450px;
   margin-bottom: 30px;
-  padding: 25px;
+  padding: 20px;
   
   display: flex;
   flex-direction: column;
@@ -343,6 +344,7 @@ export default {
   }
 
   &__price {
+    margin-top: 5px;
     font-weight: 600;
     font-size: 20px;
     color: #0B8C56;
